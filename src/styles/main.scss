@@ -1,0 +1,143 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+
+@import 'bootstrap/scss/bootstrap';
+
+$backdrop: #e5e5e5;
+$background: #ffffff;
+$border: #dadce0;
+
+* {
+    font-family: 'Open Sans', sans-serif !important;
+}
+
+body {
+    background-color: $backdrop;
+}
+
+#root {
+    min-height: 100vh;
+    max-width: 48.125rem;
+    margin: auto;
+}
+
+.card {
+    border-color: $border;
+    border-radius: .5rem;
+}
+
+.card-body {
+    padding: 1.5rem;
+}
+
+.registration_container {
+    &_footer {
+        margin-top: 1.5rem;
+
+        .child_form_action {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .child_form_action span {
+            display: block;
+        }
+    }
+
+    .form-control {
+        padding-left: 0;
+        border: none;
+        border-bottom: 1px solid $border;
+        border-radius: 0;
+        
+        &:focus + .separator {
+            transform: scaleX(1) translateY(-2px);   
+            opacity: 1;
+        }
+    }
+
+    .form-control:focus {
+        box-shadow: unset;
+    }
+
+    .btn:not(.btn-sm) {
+        border-radius: 4px;
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+
+    .child_form_label {
+        display: flex;
+        position: relative;
+        height: 3rem;
+    
+        span {
+            position: absolute;
+            left: 0;
+            top: 20%;
+            background-color: $backdrop;
+            padding-right: 1rem;
+            z-index: 2;
+            text-transform: capitalize;
+        }
+    
+        button {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: absolute;
+            top: 15%;
+            right: 0;
+            width: 2rem;
+            height: 2rem;
+            background-color: #ffffff;
+            border-radius: 50%;
+            border: none;
+            color: $danger;
+            &:not(:hover) {
+                opacity: .75;
+            }
+        }
+    
+        &::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 50%;
+            height: 1px;
+            width: calc(100% - 3rem);
+            background-color: #b1b1b1;
+            z-index: 1;
+        }
+    }
+    
+    .separator {
+        height: 1.5px;
+        width: 100%;
+        background: $primary;
+        display: block;
+        transform: scaleX(0) translateY(-2px);
+        transform-origin: 50%;
+        opacity: 0;
+        transition: all .15s linear;
+    }
+}
+
+@media only screen and (min-width: 601px) {
+    .registration_container {
+        &_footer {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .registration_container {
+        .btn[type="submit"] {
+            width: 100%;
+            margin-top: 1.5rem;
+        }
+    }
+}

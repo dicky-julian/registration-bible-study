@@ -1,0 +1,1 @@
+export { FormCheck as default } from './component';
