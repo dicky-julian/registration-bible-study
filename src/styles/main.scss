@@ -1,10 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
 
-@import 'bootstrap/scss/bootstrap';
-
 $backdrop: #e5e5e5;
 $background: #ffffff;
 $border: #dadce0;
+$primary: #000;
+
+@import 'bootstrap/scss/bootstrap';
 
 * {
     font-family: 'Open Sans', sans-serif !important;
@@ -30,6 +31,7 @@ body {
 }
 
 .registration_container {
+    padding: 1.5rem 1rem;
     &_footer {
         margin-top: 1.5rem;
 
@@ -50,14 +52,40 @@ body {
         border-bottom: 1px solid $border;
         border-radius: 0;
         
+        &:focus {
+            box-shadow: unset !important;
+        }
+
         &:focus + .separator {
             transform: scaleX(1) translateY(-2px);   
             opacity: 1;
         }
     }
 
-    .form-control:focus {
-        box-shadow: unset;
+    .was-validated {
+        .form-control {
+            &:not(.form-control-check) {
+                &:valid + .separator {
+                    background: $success;
+                }
+                &:invalid + .separator {
+                    background: $danger;
+                }
+            }
+
+            &:valid:not(:focus) {
+                border-color: $border !important;
+            }
+        }
+    }
+
+    .form-control-check {
+        .form-control {
+            color: transparent;
+            &:valid, &:invalid {
+                border-bottom: none;
+            }
+        }
     }
 
     .btn:not(.btn-sm) {
@@ -129,6 +157,11 @@ body {
             display: flex;
             align-items: center;
             justify-content: space-between;
+        }
+
+        .btn[type="submit"] {
+            padding-left: 1.5rem;
+            padding-right: 1.5rem;
         }
     }
 }
