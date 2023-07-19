@@ -4,7 +4,8 @@ export const Transaction = () => {
     const navigate = useNavigate ();
 
     const onViewDetail = (bill_no: string) => {
-        navigate(`/transaction/${bill_no}`);
+        const billNo = bill_no.replaceAll('/', '%2F');
+        navigate(`/transaction/${billNo}`);
     }
 
     return (
@@ -16,7 +17,7 @@ export const Transaction = () => {
 
             <div className="transaction_list">
                 {[1, 2, 3, 4, 5, 6, 7, 8, 9, 0].map((i) => (
-                    <div className="transaction_card py-3" onClick={() => onViewDetail('GMS/EK-JBT/23/05/03053949680')} key={i}>
+                    <div className="transaction_item py-3" onClick={() => onViewDetail('GMS/EK-JBT/23/05/03053949680')} key={i}>
                         <div className="d-flex justify-content-between">
                             <small className="fw-bold">GMS/EK-JBT/23/05/03053949680</small>
                             <small>Rp30.000</small>

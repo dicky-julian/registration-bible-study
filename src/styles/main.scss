@@ -4,6 +4,7 @@ $backdrop: #e5e5e5;
 $background: #ffffff;
 $border: #dadce0;
 $primary: #000;
+$dark: #dadce06b;
 
 @import 'bootstrap/scss/bootstrap';
 
@@ -175,21 +176,64 @@ body {
 
     .transaction_list {
         height: 100%;
-        padding: 1rem;
+        padding-top: 1rem;
+        padding-bottom: 1rem;
         background-color: $background;
         border-top-left-radius: 1rem;
         border-top-right-radius: 1rem;
     }
 
-    .transaction_card {
+    .transaction_item {
+        padding-left: 1rem;
+        padding-right: 1rem;
+        transition: .2s;
+        cursor: pointer;
         &:not(:last-child) {
-            border-bottom: 1px solid #dadce06b;
+            border-bottom: 1px solid $dark;
+        }
+        &:hover {
+            background-color: $dark;
         }
     }
 
     .fill_space {
         flex: 1;
         background-color: $background;
+    }
+}
+
+.transaction_detail_container {
+    @extend .mobile_screen;
+    min-height: calc(100vh - 3.375rem);
+    padding: 2rem 1rem;
+    background-color: $background;
+
+    .transaction_header {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+
+        .status {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 3rem;
+            height: 3rem;
+            background-color: rgb(255 225 223);
+            border-radius: 50%;
+        }
+    }
+
+    .transaction_content {
+        span {
+            font-size: 0.875em;
+        }
+    }
+
+    hr {
+        border-top: 1px dashed $border;
+        opacity: unset;
     }
 }
 
