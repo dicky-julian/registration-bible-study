@@ -15,8 +15,7 @@ body {
     background-color: $backdrop;
 }
 
-#root {
-    min-height: 100vh;
+.mobile_screen {
     max-width: 48.125rem;
     margin: auto;
 }
@@ -31,6 +30,7 @@ body {
 }
 
 .registration_container {
+    @extend .mobile_screen;
     padding: 1.5rem 1rem;
     &_footer {
         margin-top: 1.5rem;
@@ -149,6 +149,10 @@ body {
         opacity: 0;
         transition: all .15s linear;
     }
+}
+
+.billing_container {
+    @extend .mobile_screen;
 }
 
 @media only screen and (min-width: 601px) {

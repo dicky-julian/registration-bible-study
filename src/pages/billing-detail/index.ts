@@ -1,0 +1,1 @@
+export { BillingDetail as default } from './component';

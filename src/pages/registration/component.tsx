@@ -56,8 +56,6 @@ export const Registration = () => {
             console.log('[DEBUG] payload : ', payload);
         }
 
-        
-
         setValidated(true);
     }
     
