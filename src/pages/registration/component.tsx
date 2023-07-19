@@ -62,7 +62,7 @@ export const Registration = () => {
     return (
         <section className='registration_container'>
             <div className='mb-4'>
-                <h1>Form Pendaftaran Bible Study Eaglekidz</h1>
+                <h2>Form Pendaftaran Bible Study Eaglekidz</h2>
                 <span className='text-danger'>* Menunjukkan Pertanyaan wajib diisi</span>
             </div>
             

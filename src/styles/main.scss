@@ -15,6 +15,12 @@ body {
     background-color: $backdrop;
 }
 
+#root {
+    &>section {
+        margin-top: 3.375rem;
+    }
+}
+
 .mobile_screen {
     max-width: 48.125rem;
     margin: auto;
@@ -29,9 +35,15 @@ body {
     padding: 1.5rem;
 }
 
+.navbar-toggler {
+    padding: var(--bs-navbar-toggler-padding-y);
+    border: none;
+}
+
 .registration_container {
     @extend .mobile_screen;
     padding: 1.5rem 1rem;
+    
     &_footer {
         margin-top: 1.5rem;
 
@@ -151,8 +163,51 @@ body {
     }
 }
 
-.billing_container {
+.transaction_container {
     @extend .mobile_screen;
+    display: flex;
+    flex-direction: column;
+    min-height: calc(100vh - 3.375rem);
+
+    .transaction_title {
+        padding: 1.5rem 1rem;
+    }
+
+    .transaction_list {
+        height: 100%;
+        padding: 1rem;
+        background-color: $background;
+        border-top-left-radius: 1rem;
+        border-top-right-radius: 1rem;
+    }
+
+    .transaction_card {
+        &:not(:last-child) {
+            border-bottom: 1px solid #dadce06b;
+        }
+    }
+
+    .fill_space {
+        flex: 1;
+        background-color: $background;
+    }
+}
+
+@media only screen and (min-width: 992px) {
+    .navbar-collapse {
+        flex-grow: unset;
+    }
+}
+
+@media only screen and (max-width: 991px) {
+    .navbar-nav {
+        padding-top: .5rem;
+    }
+
+    .nav-link {
+        padding-top: 1rem;
+        padding-bottom: 1rem;
+    }
 }
 
 @media only screen and (min-width: 601px) {

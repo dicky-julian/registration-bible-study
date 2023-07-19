@@ -1,7 +1,7 @@
 import { createBrowserRouter } from "react-router-dom";
 import Registration from "./pages/registration";
-import Billing from "./pages/billing";
-import BillingDetail from "./pages/billing-detail";
+import Transaction from "./pages/transaction";
+import TransactionDetail from "./pages/transaction-detail";
 import Monitoring from "./pages/monitoring";
 
 const router = createBrowserRouter([
@@ -10,12 +10,12 @@ const router = createBrowserRouter([
       element: <Registration />,
     },
     {
-      path: "/billing",
-      element: <Billing />,
+      path: "/transaction",
+      element: <Transaction />,
     },
     {
-      path: "/billing/:id",
-      element: <BillingDetail />,
+      path: "/transaction/:id",
+      element: <TransactionDetail />,
     },
     {
       path: "/admin",
