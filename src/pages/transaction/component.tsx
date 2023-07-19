@@ -18,8 +18,8 @@ export const Transaction = () => {
                 {[1, 2, 3, 4, 5, 6, 7, 8, 9, 0].map((i) => (
                     <div className="transaction_card py-3" onClick={() => onViewDetail('GMS/EK-JBT/23/05/03053949680')} key={i}>
                         <div className="d-flex justify-content-between">
-                            <span className="fw-bold">GMS/EK-JBT/23/05/03053949680</span>
-                            <span className="fw-bold">Rp30.000</span>
+                            <span>GMS/EK-JBT/23/05/03053949680</span>
+                            <span>Rp30.000</span>
                         </div>
                         <div className="d-flex justify-content-between">
                             <small>18 Jul 2023</small>
