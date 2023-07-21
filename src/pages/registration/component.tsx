@@ -2,7 +2,7 @@ import React, { FormEvent, useState } from 'react';
 import Card from 'react-bootstrap/Card';
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
-import * as Constant from '../../constants/registration-form';
+import * as Constant from '../../constants/registration';
 import { FormCheck } from '../../components/form-check/component';
 
 const Required = () => (
@@ -51,9 +51,9 @@ export const Registration = () => {
 
         const form = e.currentTarget;
         if (!form.checkValidity()) {
-            console.log('[DEBUG] gagal?');
+            
         } else {
-            console.log('[DEBUG] payload : ', payload);
+            
         }
 
         setValidated(true);
@@ -177,6 +177,37 @@ export const Registration = () => {
                                 </button>
                             </div>
                         ) : null}
+
+                        <Card className='mb-2'>
+                            <Card.Body>
+                                <Card.Text>Nama Lengkap Anak  <Required /></Card.Text>
+                                <Form.Control
+                                    value={child.name}
+                                    onChange={(e) => onChangeChildren(index, 'name', e.target.value)}
+                                />
+                                <span className="separator" />
+                                <Form.Control.Feedback type="invalid">
+                                    Pertanyaan wajib diisi
+                                </Form.Control.Feedback>
+                            </Card.Body>
+                        </Card>
+
+                        <Card className='mb-2'>
+                            <Card.Body>
+                                <FormCheck
+                                    required
+                                    label='Kelas'
+                                    value={child.grade}
+                                    options={Constant.grade}
+                                    onChange={(value) => onChangeChildren(index, 'grade', value)}
+                                />
+                                <span className="separator" />
+                                <Form.Control.Feedback type="invalid">
+                                    Pertanyaan wajib diisi
+                                </Form.Control.Feedback>
+                            </Card.Body>
+                        </Card>
+
                         <Card className='mb-2'>
                             <Card.Body>
                                 <FormCheck
@@ -188,8 +219,8 @@ export const Registration = () => {
                                 />
                                 <span className="separator" />
                                 <Form.Control.Feedback type="invalid">
-                            Pertanyaan wajib diisi
-                        </Form.Control.Feedback>
+                                    Pertanyaan wajib diisi
+                                </Form.Control.Feedback>
                             </Card.Body>
                         </Card>
 
@@ -197,13 +228,14 @@ export const Registration = () => {
                             <Card.Body>
                                 <Card.Text>No Handphone Anak (Jika Ada)</Card.Text>
                                 <Form.Control
+                                    type='number'
                                     value={child.phone}
                                     onChange={(e) => onChangeChildren(index, 'phone', e.target.value)}
                                 />
                                 <span className="separator" />
                                 <Form.Control.Feedback type="invalid">
-                            Pertanyaan wajib diisi
-                        </Form.Control.Feedback>
+                                    Pertanyaan wajib diisi
+                                </Form.Control.Feedback>
                             </Card.Body>
                         </Card>
 
@@ -218,8 +250,8 @@ export const Registration = () => {
                                 />
                                 <span className="separator" />
                                 <Form.Control.Feedback type="invalid">
-                            Pertanyaan wajib diisi
-                        </Form.Control.Feedback>
+                                    Pertanyaan wajib diisi
+                                </Form.Control.Feedback>
                             </Card.Body>
                         </Card>
 

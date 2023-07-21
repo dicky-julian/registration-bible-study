@@ -1,0 +1,1 @@
+export const chiperK = 'ybDG5jutPYfpk3BOOE8IP5rF1BYnCZVyVxB75rZwaUcoQO1o7elEfYqJS9QqFmynh604YkZN5nHPIra';

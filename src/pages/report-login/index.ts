@@ -1,0 +1,1 @@
+export { ReportLogin as default } from './component';

@@ -9,6 +9,8 @@ export class Payload {
 }
 
 export class Child {
+    name: string = '';
+    grade: string = '';
     gender: string = '';
     phone?: string = '';
     is_join_cg: string = '';
@@ -34,18 +36,25 @@ export const event_location = [
 ];
 
 export const gender = [
-    { value: 'Perempuan', label: 'Perempuan'},
-    { value: 'Laki-laki', label: 'Laki-laki'},
+    { value: 'P', label: 'Perempuan'},
+    { value: 'L', label: 'Laki-laki'},
 ];
 
 export const is_join_cg = [
-    { value: 'Sudah', label: 'Sudah'},
-    { value: 'Belum', label: 'Belum'},
+    { value: 'Y', label: 'Sudah'},
+    { value: 'N', label: 'Belum'},
 ];
 
+export const grade = [
+    { value: '4', label: '4' },
+    { value: '5', label: '5' },
+    { value: '6', label: '6' },
+    { value: '7', label: '7' },
+]
+
 export const child_pick_up = [
-    { value: 'hijau', label: 'Anak akan di jemput orang tua di area Gereja Mawar Sharon'},
-    { value: 'merah', label: 'Anak tidak di jemput di area Gereja Mawar Sharon/ diijinkan untuk meninggalkan Gereja Mawar Sharon sendiri'},
+    { value: '1', label: 'Anak akan di jemput orang tua di area Gereja Mawar Sharon'},
+    { value: '2', label: 'Anak tidak di jemput di area Gereja Mawar Sharon/ diijinkan untuk meninggalkan Gereja Mawar Sharon sendiri'},
 ];
 
 export const numberDescriptions = [
