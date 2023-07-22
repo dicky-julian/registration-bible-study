@@ -41,6 +41,21 @@ body {
     border: none;
 }
 
+.loader {
+    width: 35%;
+    max-width: 7.5rem;
+    animation: redupNyala 1s infinite alternate;
+}
+
+@keyframes redupNyala {
+    0% {
+      opacity: 0.3;
+    }
+    100% {
+      opacity: 1;
+    }
+}
+
 .registration_container {
     @extend .mobile_screen;
     padding: 1.5rem 1rem;
@@ -221,7 +236,7 @@ body {
             width: 2.5rem;
             height: 2.5rem;
             background-color: $background;
-            border: 1px solid $border;
+            border: none;
             border-radius: .25rem;
         }
     }
