@@ -2,8 +2,8 @@ import axios from 'axios';
 import { useTransaction } from '../stores/transaction';
 import { Transaction, TransactionStatus } from '../constants/transaction';
 
-const baseUrl = import.meta.env.VITE_API_URL_GMS_PAYMENT;
-const eventCode = import.meta.env.VITE_EVENT_CODE;
+const baseUrl = process.env.REACT_APP_API_URL_GMS_PAYMENT;
+const eventCode = process.env.REACT_APP_EVENT_CODE;
 
 type TransactionItem = {
     item_id: string;
@@ -135,7 +135,7 @@ export const postTransaction = async (personId: string, items: TransactionItem[]
             data: {
                 description: 'Pembelian Tiket Kids Camp Jabodetabek',
                 items,
-                redirect_url: `${import.meta.env.BASE_URL}/?auth_code={{personId}}`,
+                redirect_url: `${process.env.BASE_URL}/?auth_code={{personId}}`,
             }
         });
         console.log('[DEBUG] response post transaction : ', response);

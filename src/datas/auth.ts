@@ -1,7 +1,7 @@
 import axios from 'axios';
 import { useAuth } from '../stores/auth';
 
-const baseUrl = import.meta.env.VITE_API_URL_GMS;
+const baseUrl = process.env.REACT_APP_API_URL_GMS;
 
 export const getPersonId = async (auth_code: string) => {
     try {
