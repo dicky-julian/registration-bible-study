@@ -19,7 +19,7 @@ export const getPersonId = async (auth_code: string) => {
             return personId;
         }
 
-        throw null;
+        throw response;
     } catch (err) {
         console.log('[ERROR] error : ', err);
         return null;

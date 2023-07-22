@@ -121,6 +121,7 @@ export const getTransactionByPersonId = async (personId: string) => {
         console.log('[DEBUG] response get transaction : ', response);
     } catch (err) {
         console.log('[DEBUG] error get transaction : ', err);
+        return null;
     }
 }
 
@@ -138,8 +139,10 @@ export const postTransaction = async (personId: string, items: TransactionItem[]
                 redirect_url: `${process.env.BASE_URL}/?auth_code={{personId}}`,
             }
         });
+        return response;
         console.log('[DEBUG] response post transaction : ', response);
     } catch (err) {
         console.log('[DEBUG] err post transaction : ', err);
+        return null;
     }
 }
