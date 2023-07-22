@@ -80,3 +80,60 @@ export const numberDescriptions = [
     'sembilan belas',
     'dua puluh',
 ];
+
+export const dummy = [
+    {
+        children: [
+            {
+                gender: "L",
+                grade: "4",
+                is_join_cg: "Y",
+                name: "John Doe Jr Alpha",
+                phone: "",
+                pick_up_type: "1",
+            },
+            {
+                gender: "L",
+                grade: "4",
+                is_join_cg: "Y",
+                name: "John Doe Jr Beta",
+                phone: "",
+                pick_up_type: "1",
+              }
+          ],
+          event_location: "GMS Jakarta Barat",
+          parent_address: "JL Testing",
+          parent_domicile: "Jakarta Utara",
+          parent_email: "john.doe@gmail.com",
+          parent_name: "John Doe",
+          parent_phone: "081252641762",
+          user_id: "2",
+    },
+    {
+        children: [
+            {
+                gender: "L",
+                grade: "4",
+                is_join_cg: "Y",
+                name: "John Doe Jr Alpha",
+                phone: "",
+                pick_up_type: "1",
+            },
+            {
+                gender: "L",
+                grade: "4",
+                is_join_cg: "Y",
+                name: "John Doe Jr Beta",
+                phone: "",
+                pick_up_type: "1",
+              }
+          ],
+          event_location: "GMS Jakarta Barat",
+          parent_address: "JL Testing",
+          parent_domicile: "Jakarta Utara",
+          parent_email: "alpha.omeha@gmail.com",
+          parent_name: "Alpha Omega",
+          parent_phone: "082575123123",
+          user_id: "2",
+    }
+]
