@@ -1,6 +1,5 @@
 import { useNavigate } from "react-router-dom"
 import { useTransaction } from "../../stores/transaction";
-import Spinner from "react-bootstrap/Spinner";
 import { Placeholder } from "../../components/placeholder/component";
 import { TransactionStatus } from "../../constants/transaction";
 import { formatAmount, formatDate } from "../../utils/format";
@@ -12,39 +11,7 @@ export const Transaction = () => {
     const onViewDetail = (bill_no: string) => {
         navigate(`/transaction/detail?bill_no=${bill_no}`);
     }
-
-    const renderDate = (dateString: string) => {
-        const date = new Date(dateString);
-        const formattedDate = date.toLocaleDateString('id-ID', { day: '2-digit', month: 'short', year: 'numeric' });
-        return (
-            <small>{formattedDate}</small>
-        );
-    }
-
-    const renderAmount = (amount: number) => {
-        const formatter = new Intl.NumberFormat('id-ID', {
-            style: 'currency',
-            currency: 'IDR',
-        });
-        const formattedAmount = formatter.format(amount);
-        return (
-            <small>{formattedAmount}</small>
-        )
-    }
-
-    const renderStatus = (status: TransactionStatus) => {
-        let variant = 'success';
-
-        if (status === TransactionStatus.WAITING) variant = 'warning';
-        else if (status === TransactionStatus.EXPIRED) variant = 'danger';
-
-        return (
-            <small className={`fw-bold text-${variant}`} style={{ letterSpacing: 1 }}>
-                {status}
-            </small>
-        )
-    }
-
+    
     const getStatusVariant = (status: TransactionStatus) => {
         let variant = 'success';
 
